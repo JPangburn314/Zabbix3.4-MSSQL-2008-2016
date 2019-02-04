@@ -8,10 +8,12 @@ Copy the contents of the "files" directory into c:\Program Files\Zabbix Agent\
 
 modify C:\Program Files\Zabbix Agent\zabbix_agentd.conf
 
+```
 Timeout=30
 ServerActive=(IP of Zabbix server)
 Include=c:\Program Files\Zabbix Agent\conf.d\*
 UnsafeUserParameters=1
+```
 
 Start zabbix agent service.
 
