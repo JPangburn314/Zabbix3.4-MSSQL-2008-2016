@@ -60,7 +60,7 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Access Methods\Page Splits/sec</name>
+                            <name>SQL Server Instance {#INST}: Access Methods\Page Splits/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -102,7 +102,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Bytes Received from Replica/sec</name>
+                            <name>SQL Server Instance {#INST}: Bytes Received from Replica/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -144,7 +144,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Bytes Sent to Replica/sec</name>
+                            <name>SQL Server Instance {#INST}: Bytes Sent to Replica/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -186,7 +186,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Bytes Sent to Transport/sec</name>
+                            <name>SQL Server Instance {#INST}: Bytes Sent to Transport/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -228,7 +228,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Flow Control/sec</name>
+                            <name>SQL Server Instance {#INST}: Flow Control/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -270,7 +270,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Flow Control Time (ms/sec)</name>
+                            <name>SQL Server Instance {#INST}: Flow Control Time (ms/sec)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -312,7 +312,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Receives from Replica/sec</name>
+                            <name>SQL Server Instance {#INST}: Receives from Replica/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -354,7 +354,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Resent Messages/sec</name>
+                            <name>SQL Server Instance {#INST}: Resent Messages/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -396,7 +396,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Sends to Replica/sec</name>
+                            <name>SQL Server Instance {#INST}: Sends to Replica/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -438,7 +438,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Sends to Transport/sec</name>
+                            <name>SQL Server Instance {#INST}: Sends to Transport/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -480,7 +480,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Buffer Manager\Page life expectancy</name>
+                            <name>SQL Server Instance {#INST}: Buffer Manager\Page life expectancy</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -522,7 +522,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Buffer Manager\Page reads/sec</name>
+                            <name>SQL Server Instance {#INST}: Buffer Manager\Page reads/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -564,7 +564,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Buffer Manager\Page writes/sec</name>
+                            <name>SQL Server Instance {#INST}: Buffer Manager\Page writes/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -606,7 +606,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Database Flow Control Delay</name>
+                            <name>SQL Server Instance {#INST}: Database Flow Control Delay</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -644,7 +644,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Database Flow Controls/sec</name>
+                            <name>SQL Server Instance {#INST}: Database Flow Controls/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -686,7 +686,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: File Bytes Received/sec</name>
+                            <name>SQL Server Instance {#INST}: File Bytes Received/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -724,7 +724,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Group Commits/Sec</name>
+                            <name>SQL Server Instance {#INST}: Group Commits/Sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -762,7 +762,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Group Commit Time</name>
+                            <name>SQL Server Instance {#INST}: Group Commit Time</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -800,7 +800,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Bytes Compressed/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Bytes Compressed/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -838,7 +838,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Bytes Decompressed/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Bytes Decompressed/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -876,7 +876,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Bytes Received/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Bytes Received/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -914,7 +914,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Compression Cache hits/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Compression Cache hits/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -956,7 +956,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Compression Cache misses/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Compression Cache misses/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -994,7 +994,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Compressions/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Compressions/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1032,7 +1032,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Decompressions/sec</name>
+                            <name>SQL Server Instance {#INST}: Log Decompressions/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1070,7 +1070,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log remaining for undo</name>
+                            <name>SQL Server Instance {#INST}: Log remaining for undo</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1108,7 +1108,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Log Send Queue</name>
+                            <name>SQL Server Instance {#INST}: Log Send Queue</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1150,7 +1150,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Mirrored Write Transactions/sec</name>
+                            <name>SQL Server Instance {#INST}: Mirrored Write Transactions/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1188,7 +1188,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Recovery Queue</name>
+                            <name>SQL Server Instance {#INST}: Recovery Queue</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1230,7 +1230,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Redo blocked/sec</name>
+                            <name>SQL Server Instance {#INST}: Redo blocked/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1268,7 +1268,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Redo Bytes Remaining</name>
+                            <name>SQL Server Instance {#INST}: Redo Bytes Remaining</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1306,7 +1306,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Redone Bytes/sec</name>
+                            <name>SQL Server Instance {#INST}: Redone Bytes/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1344,7 +1344,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Redones/sec</name>
+                            <name>SQL Server Instance {#INST}: Redones/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1382,7 +1382,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Total Log requiring undo</name>
+                            <name>SQL Server Instance {#INST}: Total Log requiring undo</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1420,7 +1420,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Transaction Delay</name>
+                            <name>SQL Server Instance {#INST}: Transaction Delay</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1458,7 +1458,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Databases(_Total)\Percent Log Used</name>
+                            <name>SQL Server Instance {#INST}: Databases(_Total)\Percent Log Used</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2025,7 +2025,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:General Statistics\User Connections</name>
+                            <name>SQL Server Instance {#INST}:General Statistics\User Connections</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2067,7 +2067,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:General Statistics\Processes Blocked</name>
+                            <name>SQL Server Instance {#INST}:General Statistics\Processes Blocked</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2109,7 +2109,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Locks(_Total)\Lock Timeouts/sec</name>
+                            <name>SQL Server Instance {#INST}:Locks(_Total)\Lock Timeouts/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2151,7 +2151,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Locks(_Total)\Number of Deadlocks/sec</name>
+                            <name>SQL Server Instance {#INST}:Locks(_Total)\Number of Deadlocks/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2193,7 +2193,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory Manager\Memory Grants Pending</name>
+                            <name>SQL Server Instance {#INST}:Memory Manager\Memory Grants Pending</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2235,7 +2235,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory Manager\Target Server Memory (KB)</name>
+                            <name>SQL Server Instance {#INST}:Memory Manager\Target Server Memory (KB)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2277,7 +2277,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory Manager\Total Server Memory (KB)</name>
+                            <name>SQL Server Instance {#INST}:Memory Manager\Total Server Memory (KB)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2319,7 +2319,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:SQL Statistics\Batch Requests/sec</name>
+                            <name>SQL Server Instance {#INST}:SQL Statistics\Batch Requests/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2361,7 +2361,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:SQL Statistics\SQL Compilations/sec</name>
+                            <name>SQL Server Instance {#INST}:SQL Statistics\SQL Compilations/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2403,7 +2403,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:SQL Statistics\SQL Re-Compilations/sec</name>
+                            <name>SQL Server Instance {#INST}:SQL Statistics\SQL Re-Compilations/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2445,7 +2445,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory grant queue waits/Average wait time (ms)</name>
+                            <name>SQL Server Instance {#INST}:Memory grant queue waits/Average wait time (ms)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2487,7 +2487,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Network IO waits/Average wait time (ms)</name>
+                            <name>SQL Server Instance {#INST}:Network IO waits/Average wait time (ms)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2529,7 +2529,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Page IO latch waits/Average wait time (ms)</name>
+                            <name>SQL Server Instance {#INST}:Page IO latch waits/Average wait time (ms)</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2571,7 +2571,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory grant queue waits/Cumulative wait time (ms) per second</name>
+                            <name>SQL Server Instance {#INST}:Memory grant queue waits/Cumulative wait time (ms) per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2613,7 +2613,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Network IO waits/Cumulative wait time (ms) per second</name>
+                            <name>SQL Server Instance {#INST}:Network IO waits/Cumulative wait time (ms) per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2655,7 +2655,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Page IO latch waits/Cumulative wait time (ms) per second</name>
+                            <name>SQL Server Instance {#INST}:Page IO latch waits/Cumulative wait time (ms) per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2697,7 +2697,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory grant queue waits/Waits in progress</name>
+                            <name>SQL Server Instance {#INST}:Memory grant queue waits/Waits in progress</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2739,7 +2739,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Network IO waits/Waits in progress</name>
+                            <name>SQL Server Instance {#INST}:Network IO waits/Waits in progress</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2781,7 +2781,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Page IO latch waits/Waits in progress</name>
+                            <name>SQL Server Instance {#INST}:Page IO latch waits/Waits in progress</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2823,7 +2823,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Memory grant queue waits/Waits started per second</name>
+                            <name>SQL Server Instance {#INST}:Memory grant queue waits/Waits started per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2865,7 +2865,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Network IO waits/Waits started per second</name>
+                            <name>SQL Server Instance {#INST}:Network IO waits/Waits started per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2907,7 +2907,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}:Page IO latch waits/Waits started per second</name>
+                            <name>SQL Server Instance {#INST}:Page IO latch waits/Waits started per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -3074,7 +3074,7 @@ Setup a rule for &quot;event tag pair&quot;, use EC=EC, and set operation to clo
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Error Log File (LOGCount)</name>
+                            <name>SQL Server Instance {#INST}: Error Log File (LOGCount)</name>
                             <type>7</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -3116,7 +3116,7 @@ Setup a rule for &quot;event tag pair&quot;, use EC=EC, and set operation to clo
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}: Error Log File (LOG)</name>
+                            <name>SQL Server Instance {#INST}: Error Log File (LOG)</name>
                             <type>7</type>
                             <snmp_community/>
                             <snmp_oid/>
