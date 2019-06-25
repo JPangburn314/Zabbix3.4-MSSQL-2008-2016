@@ -1500,7 +1500,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Active Transactions</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Active Transactions</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1542,7 +1542,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Data File Size</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Data File Size</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1589,7 +1589,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Bytes Flushed/sec</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Bytes Flushed/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1627,7 +1627,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log File Size</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log File Size</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1674,7 +1674,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log File Used Size</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log File Used Size</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1721,7 +1721,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Flushes/sec</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Flushes/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1759,7 +1759,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Flush Waits/sec</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Flush Waits/sec</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1797,7 +1797,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Flush Wait Time</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Flush Wait Time</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1835,7 +1835,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Growths</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Growths</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1873,7 +1873,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Shrinks</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Shrinks</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1911,7 +1911,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Log Truncations</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Log Truncations</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1949,7 +1949,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Percent Log Used</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Percent Log Used</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -1987,7 +1987,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Transactions per second</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Transactions per second</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
@@ -2949,7 +2949,7 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>SQL Server, Instance {#INST}, DB {#DBNAME}: Database Status</name>
+                            <name>SQL Server Instance {#INST} DB {#DBNAME}: Database Status</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
