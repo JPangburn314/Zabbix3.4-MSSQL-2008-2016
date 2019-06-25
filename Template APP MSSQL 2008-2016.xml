@@ -2953,7 +2953,7 @@
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
-                            <key>system.run[&quot;powershell C:\'Program Files'\'Zabbix Agent'\scripts\database_status_disc.ps1 -instName '{#INST}' -dbName '{#DBNAME}'&quot;]</key>
+                            <key>mssql.dbstatus</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>0</trends>
