@@ -20,19 +20,19 @@ function convertto-encoding ([string]$from, [string]$to){
 
 # First, grab our hostname
 $SQLServer = $(hostname.exe)
-# Now, we find all services that start with MSSQL$ and loop through them
-Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
-    # Take our service name string and massage it a bit,
-    # we end up with SERVERNAME\INSTANCE
-    $dirtyInstanceName = "$($_.Name)"
-    $cleanInstanceSplit = $dirtyInstanceName -split "\$"
-    $cleanInstance = $cleanInstanceSplit[1]
-    $fullInstance = $SQLServer + "\$cleanInstance"
 
-    ## Check to see if this instance matches the instance name that was
-    ## passed on the command line. If not, skip it
-    if ($fullInstance -notlike "*$instName*"){
-        return
+# Now, we find all services that start with MSSQL$ and loop through them
+Get-Service | Where-Object {($_.Name -like "MSSQL`$$instName") -or ($_.Name -eq 'MSSQLSERVER' -and $instName -eq 'MSSQLSERVER')}| ForEach-Object{
+
+    if ($_.Name -like 'MSSQL$*') {
+        # For named instances, we want to connect to ServerName\InstanceName
+        $dirtyInstanceName = "$($_.Name)"
+        $cleanInstanceSplit = $dirtyInstanceName -split "\$"
+        $cleanInstance = $cleanInstanceSplit[1]
+        $fullInstance = $SQLServer + "\$cleanInstance"
+    } else {
+        # For default instance, we want to connect only to ServerName
+        $fullInstance = $SQLServer
     }
 
     # Create a connection string to connect to this instance, on this server.

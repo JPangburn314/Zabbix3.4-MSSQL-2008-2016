@@ -2,6 +2,8 @@
 ## a server, loop through them, and find the databases within
 ## them, returning a JSON string of the results.
 
+$ErrorActionPreference = "Stop"
+
 # This function converts from one encoding to another.
 function convertto-encoding ([string]$from, [string]$to){
     begin{
@@ -18,18 +20,11 @@ function convertto-encoding ([string]$from, [string]$to){
 # First, grab our hostname
 $SQLServer = $(hostname.exe)
 # Now, we find all services that start with MSSQL$ and loop through them
-Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
-    # Take our service name string and massage it a bit,
-    # we end up with SERVERNAME\INSTANCE
-    $dirtyInstanceName = "$($_.Name)"
-    $cleanInstanceSplit = $dirtyInstanceName -split "\$"
-    $cleanInstance = $cleanInstanceSplit[1]
-    $fullInstance = $SQLServer + "\$cleanInstance"
-
+Get-Service | Where-Object {$_.Name -eq 'MSSQLSERVER'  -and $_.Status -eq 'Running'}| ForEach-Object{
     # Create a connection string to connect to this instance, on this server.
     # Turn on Integrated Security so we authenticate as the account running
     # the script without a prompt.
-    $connectionString = "Server = $fullInstance; Integrated Security = True;"
+    $connectionString = "Server = $SQLServer; Integrated Security = True; Connection Timeout = 2"
 
     # Create a new connection object with that connection string
     $connection = New-Object System.Data.SqlClient.SqlConnection
@@ -65,6 +60,13 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
         $DataSet = $null
     }
 
+    # Since we're explicitly looking for the default instance here, make sure we didn't get a named instance.
+    # (This is a hack workaround for one dev environment server where somehow a named instance answers first on 1433)
+    if ($DataSet.Tables[0].Rows[0].inst -ne "MSSQLSERVER") {
+        Write-Warning ("Expected instance name to be MSSQLSERVER, but got {0}." -f $DataSet.Tables[0].Rows[0].inst)
+        exit
+    }
+
     # We get a list of databases. Append to the basename variable.
     if ($DataSet -ne $null){
         $basename = $basename + $DataSet.Tables[0]
@@ -78,7 +80,7 @@ write-host "{"
 write-host " `"data`":[`n"
 foreach ($name in $basename)
 {
-    if ($idx -lt $basename.Rows.Count)
+    if ($idx -lt $basename.Count)
         {
             $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }," | convertto-encoding "cp866" "utf-8"
             write-host $line
@@ -86,7 +88,7 @@ foreach ($name in $basename)
     # If this is the last row, we print a slightly different string - one without the trailing comma
     # Although I don't think the trailing comma would technically break JSON, this is the right way
     # to do it.
-    elseif ($idx -ge $basename.Rows.Count)
+    elseif ($idx -ge $basename.Count)
         {
             $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }" | convertto-encoding "cp866" "utf-8"
             write-host $line
