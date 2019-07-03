@@ -22,7 +22,7 @@ function convertto-encoding ([string]$from, [string]$to){
 $SQLServer = $(hostname.exe)
 
 # Now, we find all services that start with MSSQL$ and loop through them
-Get-Service | Where-Object {($_.Name -like "MSSQL`$$instName") -or ($_.Name -eq 'MSSQLSERVER' -and $instName -eq 'MSSQLSERVER')}| ForEach-Object{
+Get-Service | Where-Object {($_.Name -like "MSSQL`$$instName") -or ($_.Name -eq 'MSSQLSERVER' -and $instName -eq 'MSSQLSERVER') -and $_.Status -eq 'Running'}| ForEach-Object{
 
     if ($_.Name -like 'MSSQL$*') {
         # For named instances, we want to connect to ServerName\InstanceName

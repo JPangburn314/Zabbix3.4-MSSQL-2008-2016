@@ -78,7 +78,7 @@ write-host "{"
 write-host " `"data`":[`n"
 foreach ($name in $basename)
 {
-    if ($idx -lt $basename.Rows.Count)
+    if ($idx -lt $basename.Count)
         {
             # Escape those backslashes
             $cName = $name.fileLoc -replace "\\", "\\"
@@ -86,7 +86,7 @@ foreach ($name in $basename)
             write-host $line
         }
     # If this is the last row, we print a slightly different string - one without the trailing comma
-    elseif ($idx -ge $basename.Rows.Count)
+    elseif ($idx -ge $basename.Count)
         {
             $cName = $name.fileLoc -replace "\\", "\\"
             $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#ERRORLOG}`" : `"" + $cName + "`" }" | convertto-encoding "cp866" "utf-8"
