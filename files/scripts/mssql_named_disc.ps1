@@ -78,7 +78,12 @@ write-host "{"
 write-host " `"data`":[`n"
 foreach ($name in $basename)
 {
-    if ($idx -lt $basename.Count)
+    if ($psVersionTable.CLRVersion -like '2.*') { #this is dumb, but if you can't rely on PS/.NET version being current on monitored hosts, it's necessary
+        $itemCount = $basename.Count
+    } else {
+        $itemCount = $basename.Rows.Count
+    }
+    if ($idx -lt $itemCount)
         {
             $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }," | convertto-encoding "cp866" "utf-8"
             write-host $line
@@ -86,7 +91,7 @@ foreach ($name in $basename)
     # If this is the last row, we print a slightly different string - one without the trailing comma
     # Although I don't think the trailing comma would technically break JSON, this is the right way
     # to do it.
-    elseif ($idx -ge $basename.Count)
+    elseif ($idx -ge $itemCount)
         {
             $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }" | convertto-encoding "cp866" "utf-8"
             write-host $line
