@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-07-05T17:22:53Z</date>
+    <date>2019-07-05T19:15:50Z</date>
     <groups>
         <group>
             <name>MSSQL Servers</name>
@@ -4449,7 +4449,7 @@
                             <type>7</type>
                             <snmp_community/>
                             <snmp_oid/>
-                            <key>log.count[{#ERRORLOG},Error|Failed,&quot;UTF-16&quot;]</key>
+                            <key>log.count[{#ERRORLOG},Error,&quot;UTF-16&quot;]</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -4567,18 +4567,34 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template App MSSQL 2008-2016:log.count[{#ERRORLOG},Error|Failed,&quot;UTF-16&quot;].sum(5m)}&gt;0</expression>
-                            <recovery_mode>0</recovery_mode>
+                            <expression>{Template App MSSQL 2008-2016:mssql.errorlog.errors[{#INST},'{#ERRORLOG}'].iregexp(&quot;Severity:\s(?:1[8-9]|20)&quot;)}&lt;&gt;0</expression>
+                            <recovery_mode>2</recovery_mode>
                             <recovery_expression/>
-                            <name>Errors in {#INST} ERRORLOG</name>
+                            <name>SQL Server {#INST} Errors Logged</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
                             <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
+                            <type>1</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template App MSSQL 2008-2016:mssql.errorlog.errors[{#INST},'{#ERRORLOG}'].iregexp(&quot;Severity:\s(?:2[1-4])&quot;)}&lt;&gt;0</expression>
+                            <recovery_mode>2</recovery_mode>
+                            <recovery_expression/>
+                            <name>SQL Server {#INST} Severe Errors Logged</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>1</type>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
