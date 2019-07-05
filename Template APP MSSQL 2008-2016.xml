@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-07-02T20:21:01Z</date>
+    <date>2019-07-05T17:22:53Z</date>
     <groups>
         <group>
             <name>MSSQL Servers</name>
@@ -4566,22 +4566,6 @@
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
-                        <trigger_prototype>
-                            <expression>{Template App MSSQL 2008-2016:log.count[{#ERRORLOG},Error|Failed,&quot;UTF-16&quot;].sum(5m)}&gt;0</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Errors in {#IINST} ERRORLOG</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>2</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
-                            <tags/>
-                        </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Template App MSSQL 2008-2016:log.count[{#ERRORLOG},Error|Failed,&quot;UTF-16&quot;].sum(5m)}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
