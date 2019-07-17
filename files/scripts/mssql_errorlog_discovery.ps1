@@ -1,6 +1,6 @@
-## This script exists to grab all MSSQL instances running on
-## a server, loop through them, and find the databases within
-## them, returning a JSON string of the results.
+﻿## This script exists to grab all MSSQL instances running on
+## a server, loop through them, and find the location of 
+## their error log file.
 
 # This function converts from one encoding to another.
 function convertto-encoding ([string]$from, [string]$to){
@@ -15,10 +15,11 @@ function convertto-encoding ([string]$from, [string]$to){
     }
 }
 
+
 # First, grab our hostname
 $SQLServer = $(hostname.exe)
 # Now, we find all services that start with MSSQL$ and loop through them
-Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
+Get-Service | Where-Object {($_.Name -like 'MSSQL$*' -or $_.Name -eq 'MSSQLSERVER') -and $_.Status -eq 'Running'}| ForEach-Object{
     # Take our service name string and massage it a bit,
     # we end up with SERVERNAME\INSTANCE
     $dirtyInstanceName = "$($_.Name)"
@@ -50,7 +51,7 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
                 # Create a MSSQL request
                 $SqlCmd = New-Object System.Data.SqlClient.SqlCommand
                 # Select all the database names within this instance  
-                $SqlCmd.CommandText = "SELECT @@servicename as inst, name FROM  sysdatabases"
+                $SqlCmd.CommandText = "SELECT @@servicename as inst, SERVERPROPERTY('ErrorLogFileName') AS 'fileLoc'"
                 $SqlCmd.Connection = $Connection
                 $SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
                 $SqlAdapter.SelectCommand = $SqlCmd
@@ -70,25 +71,25 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
         $basename = $basename + $DataSet.Tables[0]
     }
 }
-
-# So now $basename is full of our instance and database name rows
+# So now $basename is full of our instance and logfile rows
 # We loop through them and print the results as a JSON string
 $idx = 1
 write-host "{"
 write-host " `"data`":[`n"
 foreach ($name in $basename)
 {
-    if ($idx -lt $basename.Rows.Count)
+    if ($idx -lt $basename.Count)
         {
-            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }," | convertto-encoding "cp866" "utf-8"
+            # Escape those backslashes
+            $cName = $name.fileLoc -replace "\\", "\\"
+            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#ERRORLOG}`" : `"" + $cName + "`" }," | convertto-encoding "cp866" "utf-8"
             write-host $line
         }
     # If this is the last row, we print a slightly different string - one without the trailing comma
-    # Although I don't think the trailing comma would technically break JSON, this is the right way
-    # to do it.
-    elseif ($idx -ge $basename.Rows.Count)
+    elseif ($idx -ge $basename.Count)
         {
-            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }" | convertto-encoding "cp866" "utf-8"
+            $cName = $name.fileLoc -replace "\\", "\\"
+            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#ERRORLOG}`" : `"" + $cName + "`" }" | convertto-encoding "cp866" "utf-8"
             write-host $line
         }
     $idx++;

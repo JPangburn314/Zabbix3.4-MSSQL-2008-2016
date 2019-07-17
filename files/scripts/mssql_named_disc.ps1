@@ -1,6 +1,6 @@
-﻿## This script exists to grab all MSSQL instances running on
-## a server, loop through them, and find the location of 
-## their error log file.
+## This script exists to grab all MSSQL instances running on
+## a server, loop through them, and find the databases within
+## them, returning a JSON string of the results.
 
 # This function converts from one encoding to another.
 function convertto-encoding ([string]$from, [string]$to){
@@ -15,11 +15,10 @@ function convertto-encoding ([string]$from, [string]$to){
     }
 }
 
-
 # First, grab our hostname
 $SQLServer = $(hostname.exe)
 # Now, we find all services that start with MSSQL$ and loop through them
-Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
+Get-Service | Where-Object {$_.Name -like 'MSSQL$*' -and $_.Status -eq 'Running'}| ForEach-Object{
     # Take our service name string and massage it a bit,
     # we end up with SERVERNAME\INSTANCE
     $dirtyInstanceName = "$($_.Name)"
@@ -30,7 +29,7 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
     # Create a connection string to connect to this instance, on this server.
     # Turn on Integrated Security so we authenticate as the account running
     # the script without a prompt.
-    $connectionString = "Server = $fullInstance; Integrated Security = True;"
+    $connectionString = "Server = $fullInstance; Integrated Security = True; Connection Timeout = 2"
 
     # Create a new connection object with that connection string
     $connection = New-Object System.Data.SqlClient.SqlConnection
@@ -51,7 +50,7 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
                 # Create a MSSQL request
                 $SqlCmd = New-Object System.Data.SqlClient.SqlCommand
                 # Select all the database names within this instance  
-                $SqlCmd.CommandText = "SELECT @@servicename as inst, SERVERPROPERTY('ErrorLogFileName') AS 'fileLoc'"
+                $SqlCmd.CommandText = "SELECT @@servicename as inst, name FROM  sysdatabases"
                 $SqlCmd.Connection = $Connection
                 $SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
                 $SqlAdapter.SelectCommand = $SqlCmd
@@ -71,25 +70,30 @@ Get-Service | Where-Object {$_.Name -like 'MSSQL$*'}| ForEach-Object{
         $basename = $basename + $DataSet.Tables[0]
     }
 }
-# So now $basename is full of our instance and logfile rows
+
+# So now $basename is full of our instance and database name rows
 # We loop through them and print the results as a JSON string
 $idx = 1
 write-host "{"
 write-host " `"data`":[`n"
 foreach ($name in $basename)
 {
-    if ($idx -lt $basename.Rows.Count)
+    if ($psVersionTable.CLRVersion -like '2.*') { #this is dumb, but if you can't rely on PS/.NET version being current on monitored hosts, it's necessary
+        $itemCount = $basename.Count
+    } else {
+        $itemCount = $basename.Rows.Count
+    }
+    if ($idx -lt $itemCount)
         {
-            # Escape those backslashes
-            $cName = $name.fileLoc -replace "\\", "\\"
-            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#ERRORLOG}`" : `"" + $cName + "`" }," | convertto-encoding "cp866" "utf-8"
+            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }," | convertto-encoding "cp866" "utf-8"
             write-host $line
         }
     # If this is the last row, we print a slightly different string - one without the trailing comma
-    elseif ($idx -ge $basename.Rows.Count)
+    # Although I don't think the trailing comma would technically break JSON, this is the right way
+    # to do it.
+    elseif ($idx -ge $itemCount)
         {
-            $cName = $name.fileLoc -replace "\\", "\\"
-            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#ERRORLOG}`" : `"" + $cName + "`" }" | convertto-encoding "cp866" "utf-8"
+            $line= "{ `"{#INST}`" : `"" + $name.inst + "`", "  + "`"{#DBNAME}`" : `"" + $name.name + "`" }" | convertto-encoding "cp866" "utf-8"
             write-host $line
         }
     $idx++;
